@@ -7,6 +7,30 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>做出修改，然后在没有加入缓存（git add也有跟踪的命令）和提交（git commit -m）之前，撤销修改</h2>
+    <h2>做出修改再保存，然后在没有加入缓存（git add也有跟踪的命令）和提交管理仓库（git commit -m）之前，撤销修改git checkout -- 文件名</h2>
+    <p>
+        git status和git status -s用来查看未提交文件状态
+        git add . 把使用修改文件加入缓存
+        git reset HEAD 文件名 和 git reset HEAD . 把缓存里面的文件移除
+        git commit -a -m "信息描写" 跳过缓存，直接提交修改保存过的文件
+        git rm -f 文件名 从仓库和工作区中同时移除这个文件
+        git rm --cashed 文件名 只从仓库中移除这个文件
+        git log 列出提交历史，最近的提交在最上面
+        git log -2最近两次提交历史
+        git log -2 --pretty=online在一行看最近两条提交历史
+        git log -2 --pretty=format:"%h | %an | %ar | %s"   %h提交的简写哈希值 %an作者名字 %ar修改日期 %s提交说明
+    </p>
+    <p>git管理.gitignore忽略文件(不需要git仓库管理,也不用重新在未跟踪文件列表)
+        git add .
+        git status -s
+        git commit -m "创建了git忽略文件"
+        git status
+    </p>
+    <p>把项目回退到以前的版本
+        git log --pretty=online先查看所有提交历史
+        git reset --hard <CommitID>根据提交id回到指定版本
+        git reflog --pretty=online查看所有操作历史
+        git reset --hard <CommitID>根据提交id回到指定版本
+    </p>
 </body>
 </html>
